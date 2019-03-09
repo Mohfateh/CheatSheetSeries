@@ -11,15 +11,15 @@ This cheat sheet provides guidance to assess existing apps as well as new apps. 
 
 Following the guidance in this cheat sheet, the assessors will list all possible risks and then verifies whether there are enough security controls to protect against these risks. The assessor will then give better recommendations on how to mitigate these risks. It will help the assessor discover logical attacks. In general, the threat modelling will help designers, architects and assessors discover logical attacks.
 
-# Preparation
+# 1. Preparation
 
-## Understand Risk Management Basics in Context of Application Security
+## 1.1. Understand Risk Management Basics in Context of Application Security
 
 Understand the Relation between Risk, Threats, and Vulnerabilities.
 
-## Understand Threat Modeling Terminologies
+## 1.2. Understand Threat Modeling Terminologies
 
-### Asset, Threat Agent, Attack Surface, Likelihood, Impact, Control, Mitigation, Tractability Matrix
+### 1.2.1. Asset, Threat Agent, Attack Surface, Likelihood, Impact, Control, Mitigation, Tractability Matrix
 
 Information Asset: is a body of knowledge that is organized and managed as a single entity. Like any other corporate asset, an organization's information assets have financial value.
 
@@ -37,19 +37,19 @@ Likelihood: Likelihood of threat event initiation or occurrence represents the d
 
 `Tractability Matrix`: a grid that allows documentation and easy viewing of what is required for a system's security.
 
-## Define Objectives
+## 1.3. Define Objectives
 
 Before starting the threat modelling process; it is important to identify business objectives of the applications, and identify security & compliance requirements. This is very important to be defined in advance to help evaluating the impact of any vulnerability during the risk analysis process.
 
-# Identify application design
+# 2. Identify application design
 
 Understanding application design is a key activity to perform application threat modelling. It will enable the user of this cheat sheet to draw an accurate data flow diagram. Therefore, it will be easier to identify all possible risks. Moreover, the more the user of this cheat sheet understands application design, the better they will understand logical application attacks. The objective of the design document is to enumerate application components.
 
-## Review the application design document
+## 2.1. Review the application design document
 
 If you are not performing threat modelling during the development (in the design phase) so you have to review the application design documents to understand the application structure and to help generating the data flow diagram. If there are no available design documents so you have to create one. Move to next section
 
-## Create design documents
+## 2.2. Create design documents
 
 There are many ways to generate design documents; the **4+1** view model is one of the matured approaches to build your design document. 
 
@@ -59,7 +59,7 @@ Please note that, the **4+1** is comprehensive, you may use any other design mod
 
 The following subsections show the details about **4+1** approach and how this could help in the threat modelling process:
 
-### Logical View
+### 2.2.1. Logical View
 
 Create a logical map of the Target of Evaluation.
 
@@ -69,7 +69,7 @@ Create a logical map of the Target of Evaluation.
 
 **Related Artifacts**: Design model
 
-### Implementation View
+### 2.2.2. Implementation View
 
 **Audience**:  Programmers.
 
@@ -79,7 +79,7 @@ Create a logical map of the Target of Evaluation.
 
 Please refer to the image in the appendix section for sample design for the implementation view.
 
-### Process View
+### 2.2.3. Process View
 
 **Audience**:  Integrators.
 
@@ -87,7 +87,7 @@ Please refer to the image in the appendix section for sample design for the impl
 
 **Related Artifacts**:  (no specific artifact).
 
-### Deployment View
+### 2.2.4. Deployment View
 
 Create a physical map of the Target of Evaluation
 
@@ -97,7 +97,7 @@ Create a physical map of the Target of Evaluation
 
 **Related Artifacts**: Deployment model.
 
-### Use-Case View
+### 2.2.5. Use-Case View
 
 **Audience**: All the stakeholders of the system, including the end-users.
 
@@ -105,7 +105,7 @@ Create a physical map of the Target of Evaluation
 
 **Related Artifacts**:  Use-Case Model, Use-Case documents
 
-# Decompose and Model the System
+# 3. Decompose and Model the System
 
 Gain an understanding of how the system works to perform a threat model, it is important to understand how the system works and interacts with its ecosystem. To start with creating a high-level information flow diagram, like the following:
 
@@ -117,11 +117,11 @@ Gain an understanding of how the system works to perform a threat model, it is i
 6.  Identify the information elements and their classification as per your information classification policy
 7.  Where possible add assets to the identified information flows.
 
-## Define and Evaluate your Assets
+## 3.1. Define and Evaluate your Assets
 
 Assets involved in the information flow should be defined and evaluated according to their value of confidentiality, integrity and availability.
 
-### Consider Data in transit and Data at rest
+### 3.1.1. Consider Data in transit and Data at rest
 
 Data protection in transit is the protection of this data while it’s traveling from network to network or being transferred from a local storage device to a cloud storage device – wherever data is moving, effective data protection measures for in transit data are critical as data is often considered less secure while in motion.
 
@@ -129,51 +129,51 @@ While data at rest is sometimes considered to be less vulnerable than data in tr
 
 The risk profile for data in transit or data at rest depends on the security measures that are in place to secure data in either state. Protecting sensitive data both in transit and at rest is imperative for modern enterprises as attackers find increasingly innovative ways to compromise systems and steal data.
 
-## Create an information flow diagram
+## 3.2. Create an information flow diagram
 
-### Whiteboard Your Architecture
+### 3.2.1. Whiteboard Your Architecture
 
 It is important to whiteboard system architecture by showing the major constraints and decisions in order to frame and start conversations. The value is actually twofold. If the architecture cannot be white-boarded, then it suggests that it is not well understood. If a clear and concise whiteboard diagram can be provided, others will understand it and it will be easier to communicate details.
 
-### Manage to present your DFD in context of MVC
+### 3.2.2. Manage to present your DFD in context of MVC
 
 In this step Data Flow Diagram should be divided the in the context of Model, View, Controller (MVC).
 
-### Use tools to draw your diagram
+### 3.2.3. Use tools to draw your diagram
 
 If you don’t like to manually draw your DFD; there are several tools available that could be used:
 
-#### Poirot
+#### 3.2.3.1. Poirot
 
 The Poirot tool isolates and diagnoses defects through fault modelling and simulation. Along with a carefully selected partitioning strategy, functional and sequential test pattern applications show success with circuits having a high degree of observability.
 
-#### MS Threat modeling
+#### 3.2.3.2. MS Threat modeling
 
 A tool that helps in finding threats in the design phase of software projects.
 
-## Define Data Flow over your DFD
+## 3.3. Define Data Flow over your DFD
 
 Define Data Flows over the organization Data Flow Diagram.
 
-## Define Trust Boundaries
+## 3.4. Define Trust Boundaries
 
 Define any distinct boundaries (External boundaries and Internal boundaries) within which a system trusts all sub-systems (including data).
 
-## Define applications user roles and trust levels
+## 3.5. Define applications user roles and trust levels
 
 Define access rights that the application will grant to external entities and internal entities.
 
-## Highlight Authorization per user role over the DFD
+## 3.6. Highlight Authorization per user role over the DFD
 
 Highlight Authorization per user role, for example, defining app users’ role, admins’ role, anonymous visitors’ role...etc.
 
-## Define Application Entry points
+## 3.7. Define Application Entry points
 
 Define the interfaces through which potential attackers can interact with the application or supply it with data.
 
-# Identify Threat Agents
+# 4. Identify Threat Agents
 
-## Define all possible threats
+## 4.1. Define all possible threats
 
 Identify Possible Attackers threat agents that could exist within the Target of Evaluation. Use Means, Motive, and Opportunities to understand Threats posed by Attackers. Then associate threat agents with system components they can directly interact with.
 
@@ -190,11 +190,11 @@ The user of this cheat can depend on the following list of risks and threat libr
 3.  Risks with [SANS Top 25](https://www.sans.org/top25-software-errors).
 4.  Microsoft [STRIDE](https://en.wikipedia.org/wiki/STRIDE_(security)).
 
-## Map Threat agents to application Entry points
+## 4.2. Map Threat agents to application Entry points
 
 Map threat agents to application entry point, whether it is a login process, a registration process or whatever it might be and consider insider Threats.
 
-## Draw attack vectors and attacks tree
+## 4.3. Draw attack vectors and attacks tree
 
 During this phase conduct the following activities:
 
@@ -202,17 +202,17 @@ During this phase conduct the following activities:
 - Identify Use Cases/Abuse Cases.
 - Re-Define attack vectors to consider multi-step attacks.
 
-## Mapping Abuse Cases to Use Cases
+## 4.4. Mapping Abuse Cases to Use Cases
 
 TODO
 
-## Re-Define attack vectors
+## 4.5. Re-Define attack vectors
 
 In most cases after defining the attack vectors, the compromised user role could lead to further attacks into the application. For example, assuming that an internet banking user credentials could be compromised, the user of this cheat sheet has to then redefine the attack vectors that could result from compromising the user’s credentials and so on.
 
-# Write your Threat traceability matrix
+# 5. Write your Threat traceability matrix
 
-## Define the Impact and Probability for each threat
+## 5.1. Define the Impact and Probability for each threat
 
 Enumerate Attacks posed by most dangerous attacker in designated areas of the logical and physical maps of the target of evaluation.
 
@@ -224,7 +224,7 @@ Create risks in risk log for every identified threat or attack to any assets. A 
 
 Here we will highlight two risk methodology that could be used:
 
-### DREAD
+### 5.1.1. DREAD
 
 [DREAD](https://en.wikipedia.org/wiki/DREAD_(risk_assessment_model)), is about evaluating each existing vulnerability using a mathematical formula to retrieve the vulnerability’s corresponding risk. The **DREAD** formula is divided into 5 main categories:
 
@@ -242,7 +242,7 @@ Risk Value = (Damage + Affected users) x (Reproducibility + Exploitability + Dis
 
 Then the risk level is determined using defined thresholds below.
 
-### PASTA
+### 5.1.2. PASTA
 
 [PASTA](https://versprite.com/tag/pasta-threat-modeling/), Attack Simulation & Threat Analysis (PASTA) is a complete methodology to perform application threat modleing. PASTA introduces a risk-centric methodology aimed at applying security countermeasures that are commensurate to the possible impact that could be sustained from defined threat models, vulnerabilities, weaknesses, and attack patterns.
 
@@ -258,7 +258,7 @@ R = (T * V * P * I) / Countermeasures
 
 For more details [about PASTA](https://www.owasp.org/images/a/aa/AppSecEU2012_PASTA.pdf).
 
-## Rank Risks
+## 5.2. Rank Risks
 
 Using risk matrix rank risks from most severe to least severe based on Means, Motive & Opportunity. Below is sample risk matrix table, depending on your risk approach you can define deferent risk ranking matrix:
 
@@ -267,21 +267,21 @@ Using risk matrix rank risks from most severe to least severe based on Means, Mo
 - Risk Value: 19 to 36 &rarr; Risk Level: **Medium**
 - Risk Value: 37 to 54 &rarr; Risk Level: **High**
 
-# Determine countermeasures and mitigation.
+# 6. Determine countermeasures and mitigation.
 
 Identify risk owners and agree on risk mitigation with risk owners and stakeholders. Provide the needed controls in forms of code upgrades and configuration updates to reduce risks to acceptable levels.
 
-## Identify risk owners
+## 6.1. Identify risk owners
 
 For the assessors: After defining and analysing the risks, the assessor should be working on the mitigation plan by firstly identifying risk owners which is the personnel that is responsible for mitigating the risk. i.e. one of the information security team or the development team.
 
 For the designers or the architects: they should assign the risk mitigation to the development team to consider it while building the application.
 
-## Agree on risk mitigation with risk owners and stakeholders
+## 6.2. Agree on risk mitigation with risk owners and stakeholders
 
 TODO
 
-## Build your risk treatment strategy
+## 6.3. Build your risk treatment strategy
 
 - **Reduce:** building controls if the form of code upgrades, confirming a specific design for the application or building a specific configuration during the deployment phase to make sure that application risk is reduced.
 - **Transfer:** For a specific component in the application the risk can be transferred to an outsourced third party to develop that component and making sure that the third party is doing the right testing for the component; or during the deployment phase, outsourcing a third party to do the deployment and transferring that risk to that third party.
@@ -290,25 +290,27 @@ TODO
 
 For the assessor this is considered that last step in the assessment process. The following steps should be conducted by the risk owner, however, the assessor shall engage in 6.5 (Testing risk treatment) to verify the remediation.
 
-## Select appropriate controls to mitigate the risk
+## 6.4. Select appropriate controls to mitigate the risk
 
 Selecting one of the controls to reduce the risk, either by upgrading the code, or building a specific configuration during the deployment phase and so on.
 
-## Test risk treatment to verify remediation
+## 6.5. Test risk treatment to verify remediation
 
 Mitigation controls will not vanish the risk completely, rather, it would just reduce the risk. In this case, the user of this cheat sheet should measure the value of the risk after applying the mitigation controls. The value of the risk should be reduced to the acceptable criteria set earlier.
 
-## Reduce risk in risk log for verified treated risk
+## 6.6. Reduce risk in risk log for verified treated risk
 
 After applying the mitigation and measuring the new risk value, the user of this cheat sheet should update the risk log to verify that risk has been reduced.
 
-## Periodically retest risk
+## 6.7. Periodically retest risk
 
 TODO
 
 # Appendix
 
-TODO: *Sample Design for Implementation View in 4+1 Model*
+
+ Kruchten, Philippe (1995, November). Architectural Blueprints — The “4+1” View Model of Software Architecture. IEEE Software 12 (6), pp. 42-50.
+Mikko Kontio (2008, July) Architectural manifesto: Designing software architectures, Part 5
 
 # Authors and Primary Editors
 
